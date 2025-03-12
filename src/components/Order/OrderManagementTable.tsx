@@ -5,76 +5,72 @@ import {
   TableHeader,
   TablePagination,
   TableRow,
-} from "../../components/ui/table";
-import { useState } from "react";
+} from "../ui/table";
 
-interface User {
+import { useState } from "react";
+import Badge from "../ui/badge/Badge";
+
+interface Order {
   id: number;
-  fullname: string;
   address: string;
   email: string;
   phone: string;
-  password: string;
-  role: string;
+  fullname: string;
+  status: string;
 }
 
 // Define the table data using the interface
-const tableData: User[] = [
+const tableData: Order[] = [
   {
     id: 1,
-    fullname: "Lindsey Curtis",
     address: "123 Main St",
     email: "lindsey@example.com",
     phone: "123-456-7890",
-    password: "password123",
-    role: "Web Designer",
+    fullname: "Lindsey Curtis",
+    status: "Active",
   },
   {
     id: 2,
-    fullname: "Kaiya George",
     address: "456 Elm St",
     email: "kaiya@example.com",
     phone: "987-654-3210",
-    password: "password456",
-    role: "Project Manager",
+    fullname: "Kaiya George",
+    status: "Pending",
   },
   {
     id: 3,
-    fullname: "Zain Geidt",
     address: "789 Oak St",
     email: "zain@example.com",
     phone: "555-555-5555",
-    password: "password789",
-    role: "Content Writer",
+    fullname: "Zain Geidt",
+    status: "Active",
   },
   {
     id: 4,
-    fullname: "Abram Schleifer",
     address: "101 Pine St",
     email: "abram@example.com",
     phone: "444-444-4444",
-    password: "password101",
-    role: "Digital Marketer",
+    fullname: "Abram Schleifer",
+    status: "Cancelled",
   },
   {
     id: 5,
-    fullname: "Carla George",
     address: "202 Maple St",
     email: "carla@example.com",
     phone: "333-333-3333",
-    password: "password202",
-    role: "Front-end Developer",
+    fullname: "Carla George",
+    status: "Active",
   },
 ];
 
-export default function UserTable() {
+export default function OrderManagementTable() {
   const [page, setPage] = useState(1);
   return (
     <div className="overflow-hidden rounded-xl border border-gray-200 pt-4 bg-white dark:border-white/[0.05] dark:bg-white/[0.03]">
       <div className="mb-4 flex flex-col gap-2 px-5 sm:flex-row sm:items-center sm:justify-between sm:px-6">
         <div>
           <h3 className="text-lg font-semibold text-gray-800 dark:text-white/90">
-            User Information
+            Order Management
           </h3>
         </div>
 
@@ -122,12 +118,6 @@ export default function UserTable() {
                 isHeader
                 className="px-5 py-3 font-medium text-gray-500 text-start text-theme-xs dark:text-gray-400"
               >
-                Fullname
-              </TableCell>
-              <TableCell
-                isHeader
-                className="px-5 py-3 font-medium text-gray-500 text-start text-theme-xs dark:text-gray-400"
-              >
                 Address
               </TableCell>
               <TableCell
@@ -146,41 +136,49 @@ export default function UserTable() {
                 isHeader
                 className="px-5 py-3 font-medium text-gray-500 text-start text-theme-xs dark:text-gray-400"
               >
-                Password
+                Fullname
               </TableCell>
               <TableCell
                 isHeader
                 className="px-5 py-3 font-medium text-gray-500 text-start text-theme-xs dark:text-gray-400"
               >
-                Role
+                Status
               </TableCell>
             </TableRow>
           </TableHeader>
 
           {/* Table Body */}
           <TableBody className="divide-y divide-gray-100 dark:divide-white/[0.05]">
-            {tableData.map((user) => (
-              <TableRow key={user.id}>
+            {tableData.map((order) => (
+              <TableRow key={order.id}>
                 <TableCell className="px-5 py-4 sm:px-6 text-start">
-                  {user.id}
+                  {order.id}
                 </TableCell>
                 <TableCell className="px-4 py-3 text-gray-500 text-start text-theme-sm dark:text-gray-400">
-                  {user.fullname}
+                  {order.address}
                 </TableCell>
                 <TableCell className="px-4 py-3 text-gray-500 text-start text-theme-sm dark:text-gray-400">
-                  {user.address}
+                  {order.email}
                 </TableCell>
                 <TableCell className="px-4 py-3 text-gray-500 text-start text-theme-sm dark:text-gray-400">
-                  {user.email}
+                  {order.phone}
                 </TableCell>
                 <TableCell className="px-4 py-3 text-gray-500 text-start text-theme-sm dark:text-gray-400">
-                  {user.phone}
+                  {order.fullname}
                 </TableCell>
                 <TableCell className="px-4 py-3 text-gray-500 text-start text-theme-sm dark:text-gray-400">
-                  {user.password}
-                </TableCell>
-                <TableCell className="px-4 py-3 text-gray-500 text-start text-theme-sm dark:text-gray-400">
-                  {user.role}
+                  <Badge
+                    size="sm"
+                    color={
+                      order.status === "Active"
+                        ? "success"
+                        : order.status === "Pending"
+                        ? "warning"
+                        : "error"
+                    }
+                  >
+                    {order.status}
+                  </Badge>
                 </TableCell>
               </TableRow>
             ))}
