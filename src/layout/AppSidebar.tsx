@@ -56,6 +56,8 @@ const navItems: NavItem[] = [
     icon: <PageIcon />,
     subItems: [
       { name: "Blank Page", path: "/blank", pro: false },
+      { name: "Permission Page", path: "/permission", pro: false },
+      { name: "Role Page", path: "/role", pro: false },
       { name: "404 Error", path: "/error-404", pro: false },
     ],
   },
