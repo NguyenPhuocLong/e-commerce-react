@@ -18,8 +18,8 @@ import Blank from "./pages/Blank";
 import AppLayout from "./layout/AppLayout";
 import { ScrollToTop } from "./components/common/ScrollToTop";
 import Home from "./pages/Dashboard/Home";
-import ManaUser from "./pages/User/UserPage";
-
+import PermissionPage from "./pages/Permission";
+import RolePage from "./pages/Role";
 
 export default function App() {
   return (
@@ -36,12 +36,15 @@ export default function App() {
             <Route path="/calendar" element={<Calendar />} />
             <Route path="/blank" element={<Blank />} />
 
+            {/*Linh*/}
+            <Route path="/permission" element={<PermissionPage />} />
+            <Route path="/role" element={<RolePage />} />
+
             {/* Forms */}
             <Route path="/form-elements" element={<FormElements />} />
 
             {/* Tables */}
             <Route path="/basic-tables" element={<BasicTables />} />
-            <Route path="manauser" element={<ManaUser/>} />
 
             {/* Ui Elements */}
             <Route path="/alerts" element={<Alerts />} />
