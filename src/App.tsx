@@ -18,6 +18,8 @@ import Blank from "./pages/Blank";
 import AppLayout from "./layout/AppLayout";
 import { ScrollToTop } from "./components/common/ScrollToTop";
 import Home from "./pages/Dashboard/Home";
+import ManaUser from "./pages/User/UserPage";
+
 
 export default function App() {
   return (
@@ -39,6 +41,7 @@ export default function App() {
 
             {/* Tables */}
             <Route path="/basic-tables" element={<BasicTables />} />
+            <Route path="manauser" element={<ManaUser/>} />
 
             {/* Ui Elements */}
             <Route path="/alerts" element={<Alerts />} />
