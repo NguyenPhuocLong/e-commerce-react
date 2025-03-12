@@ -49,8 +49,10 @@ const navItems: NavItem[] = [
   {
     name: "Tables",
     icon: <TableIcon />,
-    subItems: [{ name: "Basic Tables", path: "/basic-tables", pro: false },
-              { name: "ManaUser", path: "/manauser", pro: false }
+    subItems: [
+      { name: "Basic Tables", path: "/basic-tables", pro: false },
+      { name: "ManaUser", path: "/manauser", pro: false },
+      { name: "Category Tables", path: "/category-tables", pro: false },
     ],
   },
   {

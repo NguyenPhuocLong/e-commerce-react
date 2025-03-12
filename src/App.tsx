@@ -20,6 +20,7 @@ import { ScrollToTop } from "./components/common/ScrollToTop";
 import Home from "./pages/Dashboard/Home";
 import PermissionPage from "./pages/Permission";
 import RolePage from "./pages/Role";
+import CategoryTables from "./pages/Category";
 
 export default function App() {
   return (
@@ -45,6 +46,8 @@ export default function App() {
 
             {/* Tables */}
             <Route path="/basic-tables" element={<BasicTables />} />
+            <Route path="/category-tables" element={<CategoryTables />} />
+
 
             {/* Ui Elements */}
             <Route path="/alerts" element={<Alerts />} />
