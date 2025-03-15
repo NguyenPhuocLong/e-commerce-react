@@ -17,23 +17,14 @@ export default function PermissionPage() {
       <PageBreadcrumb pageTitle="Permission" />
       <div className="space-y-6">
         <ComponentCard title="Permission">
-          <div className="flex items-center gap-5">
-            <Button
-              size="sm"
-              variant="primary"
-              endIcon={<BoxIcon className="size-5" />}
-              onClick={() => navigate("/form-add-permission")}
-            >
-              Thêm
-            </Button>
-            <Button
-              size="md"
-              variant="primary"
-              endIcon={<BoxIcon className="size-5" />}
-            >
-              Sửa
-            </Button>
-          </div>
+          <Button
+            size="sm"
+            variant="primary"
+            endIcon={<BoxIcon className="size-5" />}
+            onClick={() => navigate("/create-permission")}
+          >
+            Thêm
+          </Button>
           <PermissionTable />
         </ComponentCard>
       </div>

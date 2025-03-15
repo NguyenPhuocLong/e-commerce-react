@@ -47,7 +47,7 @@ const tableData: Order[] = [
   },
 ];
 
-export default function PermissionTable() {
+export default function RoleTable() {
   const [page, setPage] = useState(1);
   const navigate = useNavigate();
   return (
@@ -55,7 +55,7 @@ export default function PermissionTable() {
       <div className="mb-4 flex flex-col gap-2 px-5 sm:flex-row sm:items-center sm:justify-between sm:px-6">
         <div>
           <h3 className="text-lg font-semibold text-gray-800 dark:text-white/90">
-            Permission
+            Role
           </h3>
         </div>
 
@@ -133,7 +133,7 @@ export default function PermissionTable() {
                       size="sm"
                       variant="primary"
                       endIcon={<BoxIcon className="size-5" />}
-                      onClick={() => navigate("/update-permission")}
+                      onClick={() => navigate("/update-role")}
                     >
                       Sửa
                     </Button>

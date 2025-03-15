@@ -1,9 +1,14 @@
 import PageBreadcrumb from "../../components/common/PageBreadCrumb";
 import ComponentCard from "../../components/common/ComponentCard";
 import PageMeta from "../../components/common/PageMeta";
-import PermissionTable from "../../components/permission/PermissionTable";
+import Button from "../../components/ui/button/Button";
+import { BoxIcon } from "../../icons";
+import { useNavigate } from "react-router";
+import { RoleTable } from "../../components/role";
 
 export default function RolePage() {
+  const navigate = useNavigate();
+
   return (
     <>
       <PageMeta
@@ -13,7 +18,15 @@ export default function RolePage() {
       <PageBreadcrumb pageTitle="Role" />
       <div className="space-y-6">
         <ComponentCard title="Role">
-          <PermissionTable />
+          <Button
+            size="sm"
+            variant="primary"
+            endIcon={<BoxIcon className="size-5" />}
+            onClick={() => navigate("/create-role")}
+          >
+            Thêm
+          </Button>
+          <RoleTable />
         </ComponentCard>
       </div>
     </>

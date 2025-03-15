@@ -21,6 +21,9 @@ import Home from "./pages/Dashboard/Home";
 import PermissionPage from "./pages/Permission";
 import RolePage from "./pages/Role";
 import CreatePermission from "./pages/CreatePermission";
+import CreateRole from "./pages/CreateRole";
+import UpdatePermission from "./pages/UpdatePermission";
+import UpdateRole from "./pages/UpdateRole";
 
 export default function App() {
   return (
@@ -43,7 +46,10 @@ export default function App() {
 
             {/* Forms */}
             <Route path="/form-elements" element={<FormElements />} />
-            <Route path="/form-add-permission" element={<CreatePermission />} />
+            <Route path="/create-permission" element={<CreatePermission />} />
+            <Route path="/create-role" element={<CreateRole />} />
+            <Route path="/update-permission" element={<UpdatePermission />} />
+            <Route path="/update-role" element={<UpdateRole />} />
 
             {/* Tables */}
             <Route path="/basic-tables" element={<BasicTables />} />

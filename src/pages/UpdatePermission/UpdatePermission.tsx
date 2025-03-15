@@ -6,7 +6,7 @@ import Input from "../../components/form/input/InputField";
 import Button from "../../components/ui/button/Button";
 import { useNavigate } from "react-router";
 
-export default function CreatePermission() {
+export default function UpdatePermission() {
   const navigate = useNavigate();
   return (
     <div>
@@ -14,9 +14,9 @@ export default function CreatePermission() {
         title="React.js Form Elements Dashboard | TailAdmin - React.js Admin Dashboard Template"
         description="This is React.js Form Elements  Dashboard page for TailAdmin - React.js Tailwind CSS Admin Dashboard Template"
       />
-      <PageBreadcrumb pageTitle="Thêm permission" />
+      <PageBreadcrumb pageTitle="Sửa permission" />
       <div className="grid grid-cols-1 xl:grid-cols-1">
-        <ComponentCard title="Thêm permission">
+        <ComponentCard title="Sửa permission">
           <div className="space-y-6">
             <div>
               <Label htmlFor="input">Name</Label>
@@ -28,7 +28,7 @@ export default function CreatePermission() {
             </div>
           </div>
           <Button size="sm" variant="primary" onClick={() => navigate("")}>
-            Thêm permission
+            Sửa permission
           </Button>
         </ComponentCard>
       </div>
