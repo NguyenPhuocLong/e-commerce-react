@@ -24,6 +24,8 @@ import CreatePermission from "./pages/CreatePermission";
 import CreateRole from "./pages/CreateRole";
 import UpdatePermission from "./pages/UpdatePermission";
 import UpdateRole from "./pages/UpdateRole";
+import UserPage from "./pages/User/UserPage";
+import OrderPage from "./pages/Order/OrderPage";
 
 export default function App() {
   return (
@@ -53,6 +55,8 @@ export default function App() {
 
             {/* Tables */}
             <Route path="/basic-tables" element={<BasicTables />} />
+            <Route path="/user-page" element={<UserPage />} />
+            <Route path="/order-page" element={<OrderPage />} />
 
             {/* Ui Elements */}
             <Route path="/alerts" element={<Alerts />} />
